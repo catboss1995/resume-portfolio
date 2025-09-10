@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaBuilding, FaCalendarAlt, FaChevronRight } from 'react-icons/fa';
 
 const ExperienceItem = ({ experience }) => {

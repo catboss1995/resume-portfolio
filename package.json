@@ -1,1 +1,29 @@
-{"name":"resume-portfolio","version":"1.0.0","description":"連璽臻的個人履歷網站 - Frontend Designer Portfolio","homepage":"https://catboss1995.github.io/resume-portfolio","private":true,"dependencies":{"react":"^18.2.0","react-dom":"^18.2.0","react-icons":"^4.12.0","react-scripts":"^0.0.0","sass":"^1.92.1"},"scripts":{"start":"react-scripts start","build":"react-scripts build","test":"react-scripts test","eject":"react-scripts eject","predeploy":"npm run build","deploy":"gh-pages -d build"},"devDependencies":{"gh-pages":"^6.3.0"},"eslintConfig":{"extends":["react-app","react-app/jest"]},"browserslist":{"production":[">0.2%","not dead","not op_mini all"],"development":["last 1 chrome version","last 1 firefox version","last 1 safari version"]},"keywords":["portfolio","resume","frontend","ui-ux","react","design"],"author":{"name":"連璽臻","email":"lhc0626@aol.com"}}
+{
+  "name": "resume-portfolio-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "sass": "^1.92.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.0",
+    "eslint": "^9.33.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "vite": "^7.1.2"
+  }
+}

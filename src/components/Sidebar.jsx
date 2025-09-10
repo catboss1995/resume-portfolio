@@ -1,44 +1,49 @@
 import React from 'react';
-import { FaGraduationCap, FaCertificate } from 'react-icons/fa';
-import PersonalInfo from './PersonalInfo';
-import SkillCategory from './SkillCategory';
-import { skills, certificates } from '../data/resumeData';
-import '../styles/Sidebar.scss';
+import { resumeData } from '../data/resumeData';
 
 const Sidebar = () => {
 return (
-  <div className="sidebar">
-    {/* Personal Info */}
-    <PersonalInfo />
-
-    {/* Skills */}
-    <div className="section">
-      <h3 className="section-title">專業技能</h3>
-      {Object.values(skills).map((skillCategory, index) => (
-        <SkillCategory
-          key={index}
-          title={skillCategory.title}
-          icon={skillCategory.icon}
-          items={skillCategory.items}
-        />
-      ))}
-    </div>
-
-    {/* Certificates */}
-    <div className="section">
-      <h3 className="section-title">
-        <FaCertificate className="section-icon" />
-        專業證照
-      </h3>
-      <ul className="certificate-list">
-        {certificates.map((cert, index) => (
-          <li key={index} className="certificate-item">
-            {cert}
-          </li>
+  <aside className="sidebar">
+    <section className="sidebar-section">
+      <h3>技能專長</h3>
+      <div className="skills-grid">
+        {resumeData.skills.map((skill, index) => (
+          <div key={index} className="skill-item">
+            <span className="skill-name">{skill.name}</span>
+            <div className="skill-bar">
+              <div 
+                className="skill-progress" 
+                style={{ width: `${skill.level}%` }}
+              ></div>
+            </div>
+          </div>
         ))}
-      </ul>
-    </div>
-  </div>
+      </div>
+    </section>
+
+    <section className="sidebar-section">
+      <h3>語言能力</h3>
+      <div className="languages">
+        {resumeData.languages.map((lang, index) => (
+          <div key={index} className="language-item">
+            <span className="language-name">{lang.name}</span>
+            <span className="language-level">{lang.level}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section className="sidebar-section">
+      <h3>興趣愛好</h3>
+      <div className="interests">
+        {resumeData.interests.map((interest, index) => (
+          <span key={index} className="interest-tag">
+            {interest}
+          </span>
+        ))}
+      </div>
+    </section>
+  </aside>
 );
 };
 

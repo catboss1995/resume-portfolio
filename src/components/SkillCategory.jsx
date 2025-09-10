@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaCode, FaPalette, FaStar, FaRobot } from 'react-icons/fa';
 
 const iconMap = {

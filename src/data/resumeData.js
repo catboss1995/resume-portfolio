@@ -53,7 +53,7 @@ export const experiences = [
     'React、Vue.js 框架深度學習',
     'SCSS/Sass 預處理器應用',
     'JavaScript ES6+ 進階技術',
-    '結合 AI 輔助多重領域深度學習'
+    '結合 AI 輔助多重領域深度學習',
   ]
 },
 {
@@ -63,8 +63,8 @@ export const experiences = [
   period: '2025/04 - 2025/06',
   description: '負責大型印刷品設計與品牌視覺規劃',
   highlights: [
-    '操作EpsonSureColorS6067L輸出機台'
-    '操作ZUND G3 M-2500多合一切割機台'
+    '操作EpsonSureColorS6067L輸出機台',
+    '操作ZUND G3 M-2500多合一切割機台',
     '印刷品設計與檔案輸出管理',
     '色彩校正與印刷品質控制',
     '客戶需求溝通與專案時程管理',
@@ -79,7 +79,7 @@ export const experiences = [
   highlights: [
     '視覺設計',
     '影片剪輯與動態圖像製作',
-    '品牌識別系統建立與維護'
+    '品牌識別系統建立與維護',
   ]
 },
 {
@@ -91,7 +91,7 @@ export const experiences = [
   highlights: [
     '視覺設計',
     '影片剪輯與動態圖像製作',
-    '品牌識別系統建立與維護'
+    '品牌識別系統建立與維護',
   ]
 },
 {
@@ -103,8 +103,8 @@ export const experiences = [
   highlights: [
     '旅遊網站視覺設計與維護',
     'SEO 優化策略執行，提升網站流量',
-    'HTML/CSS RWD基礎網站'
-    'https://www.etsgo.com.tw/goldenaward/'
+    'HTML/CSS RWD基礎網站',
+    'https://www.etsgo.com.tw/goldenaward/',
   ]
 },
 {

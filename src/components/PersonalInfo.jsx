@@ -1,6 +1,5 @@
-import React from 'react';
 import { FaCalendarAlt, FaGraduationCap, FaMotorcycle, FaDollarSign } from 'react-icons/fa';
-import { personalInfo } from '../data/resumeData';
+import { personalInfo } from './src/data/resumeData.js';
 
 const PersonalInfo = () => {
 return (
