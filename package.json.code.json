@@ -1,0 +1,55 @@
+{
+"name": "resume-portfolio",
+"version": "1.0.0",
+"description": "連璽臻的個人履歷網站 - Frontend Designer Portfolio",
+"homepage": "https://catboss1995.github.io/resume-portfolio",
+"private": true,
+"dependencies": {
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+  "react-icons": "^4.11.0",
+  "react-scripts": "5.0.1",
+  "sass": "^1.69.5"
+},
+"scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+},
+"devDependencies": {
+  "gh-pages": "^6.0.0"
+},
+"eslintConfig": {
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ]
+},
+"browserslist": {
+  "production": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ]
+},
+"keywords": [
+  "portfolio",
+  "resume",
+  "frontend",
+  "ui-ux",
+  "react",
+  "design"
+],
+"author": {
+  "name": "連璽臻",
+  "email": "lhc0626@aol.com"
+}
+}
