@@ -1,0 +1,108 @@
+@import './variables';
+
+.header {
+background: $primary-gradient;
+color: white;
+padding: $spacing-2xl $spacing-xl;
+text-align: center;
+position: relative;
+overflow: hidden;
+
+&::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: float 20s infinite linear;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-50px, -50px) rotate(360deg); }
+}
+}
+
+.profile-section {
+position: relative;
+z-index: 2;
+}
+
+.profile-img {
+width: 130px;
+height: 130px;
+border-radius: $border-radius-full;
+border: 5px solid $bg-overlay;
+margin: 0 auto $spacing-lg;
+background: $bg-overlay;
+@include flex-center;
+font-size: 50px;
+backdrop-filter: blur(10px);
+transition: transform $transition-normal;
+
+&:hover {
+  transform: scale(1.05);
+}
+
+svg {
+  color: rgba(255, 255, 255, 0.8);
+}
+}
+
+.name {
+font-size: $font-size-3xl;
+font-weight: $font-weight-light;
+margin-bottom: $spacing-md;
+letter-spacing: 3px;
+text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.title {
+font-size: $font-size-xl;
+opacity: 0.95;
+margin-bottom: $spacing-lg;
+font-weight: $font-weight-light;
+}
+
+.contact-info {
+@include flex-center;
+gap: $spacing-xl;
+flex-wrap: wrap;
+}
+
+.contact-item {
+@include flex-center;
+gap: $spacing-sm;
+padding: $spacing-xs $spacing-md;
+background: $bg-overlay;
+border-radius: 25px;
+backdrop-filter: blur(10px);
+transition: all $transition-normal;
+
+&:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+svg {
+  font-size: $font-size-sm;
+}
+}
+
+@include mobile {
+.header {
+  padding: $spacing-xl $spacing-lg;
+}
+
+.name {
+  font-size: 2.2em;
+}
+
+.contact-info {
+  flex-direction: column;
+  gap: $spacing-md;
+}
+}

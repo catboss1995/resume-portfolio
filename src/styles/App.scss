@@ -1,0 +1,93 @@
+@import './variables';
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Microsoft JhengHei', 'PingFang TC', 'Helvetica Neue', Arial, sans-serif;
+line-height: 1.6;
+color: $text-primary;
+background: $primary-gradient;
+min-height: 100vh;
+}
+
+.app {
+padding: $spacing-lg;
+opacity: 0;
+transform: translateY(30px);
+transition: all $transition-very-slow;
+
+&.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
+.resume-container {
+max-width: 900px;
+margin: 0 auto;
+background: $bg-white;
+border-radius: $border-radius-xl;
+box-shadow: $shadow-card;
+overflow: hidden;
+}
+
+.main-content {
+display: grid;
+grid-template-columns: 1fr 2fr;
+min-height: 600px;
+
+@include mobile {
+  grid-template-columns: 1fr;
+}
+}
+
+.section {
+margin-bottom: $spacing-2xl;
+
+&:last-child {
+  margin-bottom: 0;
+}
+}
+
+.section-title {
+font-size: $font-size-2xl;
+font-weight: $font-weight-semibold;
+color: $text-primary;
+margin-bottom: $spacing-lg;
+padding-bottom: $spacing-sm;
+border-bottom: 3px solid $primary-color;
+position: relative;
+display: flex;
+align-items: center;
+gap: $spacing-sm;
+
+&::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, $secondary-color, $accent-color);
+  border-radius: 2px;
+}
+
+.section-icon {
+  color: $primary-color;
+}
+}
+
+// 響應式設計
+@include mobile {
+.app {
+  padding: $spacing-md;
+}
+
+.resume-container {
+  border-radius: $border-radius-md;
+}
+}

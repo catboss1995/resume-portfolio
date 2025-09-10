@@ -27,7 +27,9 @@ resume-portfolio/
 └── .gitignore
 
 # 安裝指令
+cd ..
 npm create react-app resume-portfolio
 cd resume-portfolio
+npm create react-app
 npm install react-icons sass
 npm install --save-dev gh-pages
