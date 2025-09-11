@@ -108,9 +108,9 @@ return (
             <div className="info-item">
               <span className="info-label">
                 <Calendar className="info-icon" />
-                出生年份
+                學歷
               </span>
-              <span className="info-value birth-year">1995</span>
+              <span className="info-value birth-year">育達科技大學<br />多媒體與遊戲設計系</span>
             </div>
             <div className="info-item">
               <span className="info-label">
