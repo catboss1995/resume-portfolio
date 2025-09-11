@@ -202,7 +202,7 @@ return (
       <div className="content">
         {/* Experience */}
         <div className="section">
-          <h2 className="section-title">工作經歷</h2>
+          <h2 className="section-title">經歷</h2>
           
           {/* 職業訓練 */}
           <div className="experience-item">
@@ -228,7 +228,7 @@ return (
           <div className="experience-item">
             <div className="job-header">
               <div>
-                <h3 className="job-title">視覺</h3>
+                <h3 className="job-title">設計審稿與輸出</h3>
                 <p className="company">印刷業</p>
               </div>
               <span className="job-period">2025/04 - 2025/06</span>
