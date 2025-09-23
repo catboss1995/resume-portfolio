@@ -9,7 +9,7 @@ import './styles/Resume.scss';
 // 引入頭貼圖片
 import profileImage from './assets/profile.jpg';
 // 使用絕對路徑引用 PDF 檔案
-const resumePDF = '/resume-portfolio/assets/profile2025.pdf';
+const resumePDF = 'https://drive.google.com/uc?export=download&id=19_5teH87womX3jTy9yj36lbxuCoI1ech';
 
 const Resume = () => {
   const [isVisible, setIsVisible] = useState(false);
