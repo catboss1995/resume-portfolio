@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
 import { 
   User, Mail, Phone, MapPin, Calendar, Palette, Code, Briefcase, 
   Star, Zap, ExternalLink, Globe, Github, Figma, Image, Brush, GraduationCap
@@ -8,7 +7,7 @@ import './styles/Resume.scss';
 
 // 引入頭貼圖片
 import profileImage from './assets/profile.jpg';
-// 使用絕對路徑引用 PDF 檔案
+// 使用 Google Drive 直接下載連結
 const resumePDF = 'https://drive.google.com/uc?export=download&id=19_5teH87womX3jTy9yj36lbxuCoI1ech';
 
 const Resume = () => {
@@ -76,45 +75,6 @@ const Resume = () => {
 
   return (
     <div className={`resume-container ${isVisible ? 'fade-in' : ''}`}>
-      {/* Head Meta Tags */}
-      <Helmet>
-        <title>連璽臻 | 前端工程師 / UIUX設計 / 插畫的魔法師</title>
-        <meta name="description" content="連璽臻的個人履歷網站，展示前端開發、UI/UX設計與插畫作品集。" />
-        <meta name="keywords" content="連璽臻, 前端工程師, UIUX設計, 插畫, 網頁設計, 履歷, 作品集" />
-        <meta name="author" content="連璽臻" />
-        {/* SEO Meta Tags */}
-        <meta property="og:title" content="連璽臻 | 前端工程師 / UIUX設計 / 插畫的魔法師" />
-        <meta property="og:description" content="連璽臻的個人履歷網站，展示前端開發、UI/UX設計與插畫作品集。" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://catboss1995.github.io/resume-portfolio/" />
-        <meta property="og:image" content="https://catboss1995.github.io/resume-portfolio/assets/profile.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="連璽臻履歷 | 前端工程師 / UIUX設計 / 插畫的魔法師" />
-        <meta name="twitter:description" content="連璽臻的個人履歷網站，展示前端開發、UI/UX設計與插畫作品集。" />
-        <meta name="twitter:image" content="https://catboss1995.github.io/resume-portfolio/assets/profile.jpg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charSet="UTF-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <link rel="canonical" href="https://catboss1995.github.io/resume-portfolio/" />
-
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z29518QLGE"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-Z29518QLGE');
-            `,
-          }}
-/>
-
-        {/* 如果有網站圖標，可以添加以下標籤 */}
-        {/* <link rel="icon" href="/favicon.ico" /> */}
-        {/* <link rel="apple-touch-icon" href="/logo192.png" /> */}
-      </Helmet>
-
       {/* Header */}
       <div className="header">
         <div className="profile-section">
@@ -128,6 +88,7 @@ const Resume = () => {
                 borderRadius: '50%',
                 objectFit: 'cover'
               }}
+              loading="eager" // 優先加載頭像
               onError={(e) => {
                 e.target.style.display = 'none';
                 e.target.nextSibling.style.display = 'block';
@@ -154,6 +115,7 @@ const Resume = () => {
         </div>
       </div>
 
+      {/* 其餘內容保持不變 */}
       {/* Main Content */}
       <div className="main-content">
         {/* Sidebar */}
