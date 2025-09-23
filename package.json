@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "npx vite",
-    "build": "npx vite build",
-    "lint": "eslint .",
-    "preview": "npx vite preview"
+  "build": "npx vite build",
+  "lint": "eslint .",
+  "preview": "npx vite preview",
+  "deploy": "npx gh-pages -d dist"
   },
   "homepage": "https://catboss1995.github.io/resume-portfolio",
   "dependencies": {
