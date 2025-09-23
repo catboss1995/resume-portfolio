@@ -8,7 +8,8 @@ import './styles/Resume.scss';
 
 // 引入頭貼圖片
 import profileImage from './assets/profile.jpg';
-const resumePDF = './assets/profile.pdf';
+// 使用絕對路徑引用 PDF 檔案
+const resumePDF = '/resume-portfolio/assets/profile.pdf';
 
 const Resume = () => {
   const [isVisible, setIsVisible] = useState(false);
