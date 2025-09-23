@@ -8,7 +8,7 @@ import './styles/Resume.scss';
 
 // 引入頭貼圖片
 import profileImage from './assets/profile.jpg';
-import resumePDF from './assets/profile2025.pdf';
+const resumePDF = './assets/profile.pdf';
 
 const Resume = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,7 +51,7 @@ const Resume = () => {
       color: '#F24E1E'
     },
     {
-      name: 'GitHub 程式作品',
+      name: 'GitHub',
       url: 'https://github.com/catboss1995',
       icon: <Github size={16} />,
       description: '前端專案',
