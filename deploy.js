@@ -1,7 +1,16 @@
-// 部署腳本 - 使用環境變量中的 GitHub 令牌
-const ghpages = require('gh-pages');
-const path = require('path');
-require('dotenv').config();
+// 使用 ES 模組語法
+import { publish } from 'gh-pages';
+import { join } from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import dotenv from 'dotenv';
+
+// 初始化環境變量
+dotenv.config();
+
+// 獲取當前文件的目錄
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // 從環境變量獲取令牌
 const token = process.env.GH_TOKEN;
@@ -18,8 +27,8 @@ const repo = `https://${token}@github.com/catboss1995/resume-portfolio.git`;
 console.log('開始部署到 GitHub Pages...');
 
 // 執行部署
-ghpages.publish(
-  path.join(process.cwd(), 'dist'),
+publish(
+  join(process.cwd(), 'dist'),
   {
     repo: repo,
     branch: 'gh-pages',
