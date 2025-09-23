@@ -22,7 +22,7 @@ const Resume = () => {
 
   const portfolioLinks = [
     {
-      name: '下載我的履歷PDF',
+      name: '下載我的履歷',
       url: resumePDF,
       icon: <Globe size={16} />,
       description: '為方便人資閱覽之PDF版',
