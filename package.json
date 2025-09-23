@@ -7,8 +7,7 @@
     "dev": "npx vite",
     "build": "npx vite build",
     "lint": "eslint .",
-    "preview": "npx vite preview",
-    "deploy": "npm run build && node deploy.cjs"
+    "preview": "npx vite preview"
   },
   "homepage": "https://catboss1995.github.io/resume-portfolio",
   "dependencies": {
