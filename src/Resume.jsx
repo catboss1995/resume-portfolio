@@ -59,9 +59,9 @@ const Resume = () => {
     },
     {
       name: '個人委託網站(個人專題)',
-      url: '#',
+      url: 'https://lihi.cc/32PZh',
       icon: <Globe size={16} />,
-      description: '10/2開放，敬請期待',
+      description: '1.0版上線',
       color: '#667eea'
     },
     // {
