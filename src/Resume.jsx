@@ -227,6 +227,26 @@ const Resume = () => {
           <div className="section">
             <h2 className="section-title">經歷</h2>
             
+            {/* 永續AI智慧品質管理職業訓練 */}
+            <div className="experience-item">
+              <div className="job-header">
+                <div>
+                  <h3 className="job-title">永續AI智慧品質管理應用職業訓練</h3>
+                  <p className="company">元智大學永續發展基地</p>
+                </div>
+                <span className="job-period">2026/05 - 2026/07</span>
+              </div>
+              <p className="job-description">
+                學習永續發展與數位應用趨勢，結合品質管理技術強化職場競爭力
+              </p>
+              <ul className="highlights">
+                <li>資通訊發展趨勢與數位工具應用，強化雲端協作與數據處理能力</li>
+                <li>n8n、RATs語法、Wordpress快速架站</li>
+                <li>CSR、ESG、SDGs企業理念與永續供應鏈規劃、碳盤查、風險韌性管理</li>
+                <li>CQT品質技術基礎與統計品質七手法</li>
+              </ul>
+            </div>
+
             {/* 職業訓練 */}
             <div className="experience-item">
               <div className="job-header">
@@ -240,9 +260,9 @@ const Resume = () => {
                 專精前端開發技術，學習現代網頁開發框架與工具
               </p>
               <ul className="highlights">
-                <li>HTML5、CSS3、JavaScript 深度學習</li>
-                <li>響應式網頁設計實作</li>
-                <li>前端框架與工具鏈應用</li>
+                <li>Vite+React、HTML5、CSS3、JavaScript 深度學習</li>
+                <li>UIUX設計與響應式網頁團體實作</li>
+                <li>前端框架與GitHub應用</li>
                 <li>結合 AI 輔助工具優化開發流程</li>
               </ul>
             </div>
