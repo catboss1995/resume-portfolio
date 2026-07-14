@@ -1,97 +1,102 @@
-// Global Variables
-$font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+// Global Variables — 與 commissionFrom2026 保持一致的色彩系統
+$font-stack: 'Noto Sans TC', 'Microsoft JhengHei', system-ui, sans-serif;
+$font-mono: 'Space Mono', monospace;
 
-$body-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+:root {
+  color-scheme: light;
+  --paper: #f2e9d8;
+  --card: rgba(253, 248, 239, 0.92);
+  --card-solid: #fdf8ef;
+  --ink: #2a241c;
+  --muted: #7d735f;
+  --line: rgba(42, 36, 28, 0.1);
+  --lavender: #d7c9f1;
+  --lavender-strong: #8e72c9;
+  --mint: #b3e3d3;
+  --mint-strong: #3f9c81;
+  --coral: #e8703f;
+  --coral-strong: #8f3a14;
+  --coral-deep: #742c0f;
+  --shadow-soft: 0 14px 34px rgba(42, 36, 28, 0.12);
+  --shadow-soft-sm: 0 6px 16px rgba(42, 36, 28, 0.1);
+}
 
 // Global Reset
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 // Body Styles
 body {
-font-family: $font-stack;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-background: $body-gradient;
-min-height: 100vh;
-padding: 20px;
-
-// 添加一些背景紋理
-&::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.3) 2px, transparent 2px),
-    radial-gradient(circle at 75% 75%, rgba(255,255,255,0.2) 1px, transparent 1px);
-  background-size: 50px 50px, 30px 30px;
-  pointer-events: none;
-  z-index: -1;
-}
+  font-family: $font-stack;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(circle at 10% 15%, rgba(215, 201, 241, 0.55), transparent 38%),
+    radial-gradient(circle at 90% 12%, rgba(179, 227, 211, 0.5), transparent 38%),
+    radial-gradient(circle at 85% 90%, rgba(232, 112, 63, 0.14), transparent 42%);
+  min-height: 100vh;
+  padding: 20px;
 }
 
 // App Container
 .App {
-min-height: 100vh;
-display: flex;
-align-items: center;
-justify-content: center;
-position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 
-// 添加一些微妙的動畫
-animation: fadeIn 1s ease-out;
+  animation: fadeIn 1s ease-out;
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 }
 
 // Responsive Design
 @media (max-width: 768px) {
-body {
-  padding: 10px;
-}
+  body {
+    padding: 10px;
+  }
 
-.App {
-  min-height: calc(100vh - 20px);
-}
+  .App {
+    min-height: calc(100vh - 20px);
+  }
 }
 
 @media (max-width: 480px) {
-body {
-  padding: 5px;
+  body {
+    padding: 5px;
+  }
+
+  .App {
+    min-height: calc(100vh - 10px);
+  }
 }
 
-.App {
-  min-height: calc(100vh - 10px);
-}
-}
-
-// 添加一些全局的工具類別
+// 全局的工具類別
 .text-center {
-text-align: center;
+  text-align: center;
 }
 
 .text-left {
-text-align: left;
+  text-align: left;
 }
 
 .text-right {
-text-align: right;
+  text-align: right;
 }
 
 .mb-0 { margin-bottom: 0; }
@@ -108,30 +113,30 @@ text-align: right;
 
 // 滾動條樣式
 ::-webkit-scrollbar {
-width: 8px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-background: rgba(0,0,0,0.1);
-border-radius: 4px;
+  background: var(--line);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-border-radius: 4px;
+  background: var(--coral-strong);
+  border-radius: 4px;
 
-&:hover {
-  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
-}
+  &:hover {
+    background: var(--coral-deep);
+  }
 }
 
 // 選取文字的顏色
 ::selection {
-background: rgba(102, 126, 234, 0.3);
-color: #2c3e50;
+  background: rgba(232, 112, 63, 0.3);
+  color: var(--ink);
 }
 
 ::-moz-selection {
-background: rgba(102, 126, 234, 0.3);
-color: #2c3e50;
+  background: rgba(232, 112, 63, 0.3);
+  color: var(--ink);
 }

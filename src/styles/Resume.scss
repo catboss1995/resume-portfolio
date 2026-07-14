@@ -6,12 +6,10 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Noto Sans TC', 'Microsoft JhengHei', system-ui, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--ink);
     min-height: 100vh;
-    // 確保 body 置中
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -23,15 +21,17 @@ body {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto; // 水平置中
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    background: var(--card);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1.5px solid var(--ink);
+    border-radius: 0 32px;
+    box-shadow: var(--shadow-soft);
     overflow: hidden;
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.6s ease;
 
-    // 確保在各種螢幕尺寸下都置中
     @media (max-width: 1240px) {
         margin: 0 20px;
     }
@@ -44,22 +44,12 @@ body {
 
 // Header 區域
 .header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: var(--card-solid);
+    color: var(--ink);
     padding: 60px 40px;
     text-align: center;
+    border-bottom: 1.5px solid var(--ink);
     position: relative;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-        opacity: 0.3;
-    }
 }
 
 .profile-section {
@@ -71,39 +61,40 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--lavender);
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
-    backdrop-filter: blur(10px);
-    border: 3px solid rgba(255, 255, 255, 0.3);
+    border: 3px solid var(--ink);
 
     svg {
         width: 60px;
         height: 60px;
-        color: white;
+        color: var(--ink);
     }
 }
 
 .name {
+    font-family: 'Space Mono', monospace;
     font-size: 3rem;
     font-weight: 700;
+    letter-spacing: -0.01em;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: var(--ink);
 }
 
 .title {
     font-size: 1.3rem;
-    opacity: 0.9;
+    color: var(--muted);
     margin-bottom: 30px;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .contact-info {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 14px;
     flex-wrap: wrap;
 }
 
@@ -111,10 +102,17 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1.5px solid var(--ink);
+    background: var(--card-solid);
+    color: var(--ink);
 
     svg {
-        opacity: 0.8;
+        color: var(--coral-strong);
+        flex-shrink: 0;
     }
 }
 
@@ -132,14 +130,14 @@ body {
 // 側邊欄
 .sidebar {
     flex: 0 0 350px;
-    background: #f8f9fa;
+    background: var(--paper);
     padding: 40px 30px;
-    border-right: 1px solid #e9ecef;
+    border-right: 1.5px solid var(--ink);
 
     @media (max-width: 768px) {
         flex: none;
         border-right: none;
-        border-bottom: 1px solid #e9ecef;
+        border-bottom: 1.5px solid var(--ink);
     }
 }
 
@@ -147,6 +145,7 @@ body {
 .content {
     flex: 1;
     padding: 40px;
+    background: var(--card-solid);
 
     @media (max-width: 768px) {
         padding: 30px 20px;
@@ -163,12 +162,14 @@ body {
 }
 
 .section-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #2c3e50;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--ink);
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #667eea;
+    border-bottom: 2px solid var(--ink);
     position: relative;
 
     &::after {
@@ -178,7 +179,7 @@ body {
         left: 0;
         width: 50px;
         height: 2px;
-        background: #764ba2;
+        background: var(--coral-strong);
     }
 }
 
@@ -200,25 +201,25 @@ body {
     align-items: center;
     gap: 8px;
     font-size: 0.9rem;
-    color: #666;
-    font-weight: 500;
+    color: var(--muted);
+    font-weight: 700;
 }
 
 .info-icon {
     width: 16px;
     height: 16px;
-    color: #667eea;
+    color: var(--coral-strong);
 }
 
 .info-value {
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--ink);
     margin-left: 24px;
 }
 
 .birth-year {
     font-size: 1.1rem;
-    color: #667eea;
+    color: var(--ink);
 }
 
 // 作品連結
@@ -232,39 +233,25 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 15px;
-    background: white;
-    border-radius: 12px;
+    padding: 14px 18px;
+    background: var(--card-solid);
+    border-radius: 999px;
     text-decoration: none;
     color: inherit;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
+    border: 1.5px solid var(--line);
+    box-shadow: var(--shadow-soft-sm);
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
     position: relative;
     overflow: hidden;
 
     &:hover {
-        border-color: var(--link-color);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        border-color: var(--link-color, var(--coral));
+        background: var(--lavender);
+        transform: translateY(-1px);
 
         .external-icon {
             transform: translate(3px, -3px);
         }
-    }
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-        transition: left 0.5s ease;
-    }
-
-    &:hover::before {
-        left: 100%;
     }
 }
 
@@ -276,7 +263,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(102, 126, 234, 0.1);
+    background: rgba(42, 36, 28, 0.08);
 }
 
 .link-content {
@@ -284,19 +271,19 @@ body {
 }
 
 .link-name {
-    font-weight: 600;
-    color: #2c3e50;
+    font-weight: 700;
+    color: var(--ink);
     margin-bottom: 2px;
 }
 
 .link-description {
     font-size: 0.85rem;
-    color: #666;
+    color: var(--muted);
 }
 
 .external-icon {
-    color: #999;
-    transition: all 0.3s ease;
+    color: var(--muted);
+    transition: all 0.15s ease;
 }
 
 // 技能區塊
@@ -312,16 +299,16 @@ body {
         align-items: center;
         gap: 8px;
         font-size: 1.1rem;
-        color: #2c3e50;
+        color: var(--ink);
         margin-bottom: 12px;
-        font-weight: 600;
+        font-weight: 700;
     }
 }
 
 .category-icon {
     width: 18px;
     height: 18px;
-    color: #667eea;
+    color: var(--coral-strong);
 }
 
 .skill-grid {
@@ -331,33 +318,36 @@ body {
 }
 
 .skill-item {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
+    background: var(--card-solid);
+    color: var(--ink);
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1.5px solid var(--line);
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 600;
     display: inline-block;
-    transition: all 0.3s ease;
+    transition: all 0.15s ease;
 
     &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        border-color: var(--coral);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-soft-sm);
     }
 }
 
 // 經歷區塊
 .experience-item {
-    background: #f8f9fa;
+    background: var(--card-solid);
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 0 20px;
     margin-bottom: 25px;
-    border-left: 4px solid #667eea;
-    transition: all 0.3s ease;
+    border: 1.5px solid var(--ink);
+    box-shadow: var(--shadow-soft-sm);
+    transition: all 0.2s ease;
 
     &:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-soft);
     }
 
     &:last-child {
@@ -380,30 +370,31 @@ body {
 .job-title {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: var(--ink);
     margin-bottom: 5px;
 }
 
 .company {
-    color: #667eea;
-    font-weight: 600;
+    color: var(--coral-strong);
+    font-weight: 700;
     font-size: 1rem;
 }
 
 .job-period {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    padding: 6px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    background: var(--coral-strong);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
     white-space: nowrap;
 }
 
 .job-description {
-    color: #555;
+    color: var(--muted);
     margin-bottom: 15px;
     line-height: 1.7;
+    font-weight: 500;
 }
 
 .highlights {
@@ -413,13 +404,13 @@ body {
         position: relative;
         padding-left: 20px;
         margin-bottom: 8px;
-        color: #444;
+        color: var(--ink);
 
         &::before {
             content: '▸';
             position: absolute;
             left: 0;
-            color: #667eea;
+            color: var(--coral-strong);
             font-weight: bold;
         }
 
@@ -432,25 +423,27 @@ body {
 // 亮點區塊
 .highlight,
 .ai-highlight {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
     padding: 25px;
-    border-radius: 15px;
+    border-radius: 0 20px;
     margin-bottom: 25px;
-    border: 1px solid rgba(102, 126, 234, 0.2);
+    border: 1.5px solid var(--ink);
+    box-shadow: var(--shadow-soft-sm);
 
     h4 {
         display: flex;
         align-items: center;
         gap: 10px;
         font-size: 1.2rem;
-        color: #2c3e50;
+        color: var(--ink);
         margin-bottom: 12px;
-        font-weight: 600;
+        font-weight: 800;
+        letter-spacing: 0.02em;
     }
 
     p {
-        color: #555;
-        line-height: 1.7;
+        color: var(--ink);
+        line-height: 1.75;
+        font-weight: 500;
     }
 
     &:last-child {
@@ -458,8 +451,16 @@ body {
     }
 }
 
+.highlight {
+    background: var(--mint);
+}
+
+.ai-highlight {
+    background: var(--lavender);
+}
+
 .highlight-icon {
-    color: #667eea;
+    color: var(--coral-strong);
 }
 
 // 響應式設計
@@ -477,14 +478,14 @@ body {
     }
 
     .contact-info {
-        gap: 20px;
+        gap: 10px;
     }
 }
 
 @media (max-width: 768px) {
     .resume-container {
         margin: 10px;
-        border-radius: 15px;
+        border-radius: 0 22px;
     }
 
     .header {
@@ -501,7 +502,8 @@ body {
 
     .contact-info {
         flex-direction: column;
-        gap: 15px;
+        align-items: center;
+        gap: 10px;
     }
 
     .sidebar,
