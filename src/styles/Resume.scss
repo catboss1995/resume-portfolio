@@ -444,6 +444,10 @@ body {
         color: var(--ink);
         line-height: 1.75;
         font-weight: 500;
+
+        & + p {
+            margin-top: 15px;
+        }
     }
 
     &:last-child {
